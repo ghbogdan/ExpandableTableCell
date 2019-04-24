@@ -12,6 +12,7 @@ A simple iOS expandable UITableView cell example in Swift.
 1.0.1
 
 ## Build and Runtime Requirements
+
 + Xcode 9.0 or later
 + iOS 8.0 or later
 + Swift 4+
