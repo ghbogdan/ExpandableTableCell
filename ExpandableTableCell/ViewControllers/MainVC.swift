@@ -24,6 +24,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     // MARK: - Outlets
     */
     
+    @IBOutlet weak var nbNavigationBar: UINavigationBar!
     @IBOutlet weak var tvExpandableTable: UITableView!
     
     
@@ -36,6 +37,8 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         print("MainVC > viewDidLoad")
         
         super.viewDidLoad()
+        
+        nbNavigationBar.setValue(true, forKey: "hidesShadow")
         
         self.tvExpandableTable.rowHeight = UITableView.automaticDimension
         self.tvExpandableTable.tableFooterView = UIView()
@@ -118,7 +121,6 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         tvExpandableTable.deselectRow(at: indexPath, animated: true)
         
         // Colapse cell
-        
         guard let cell = tvExpandableTable.cellForRow(at: indexPath) as? ExpandableCell
             else { return }
         
@@ -127,11 +129,10 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         cell.isExpanded = false
         
         // Refresh table
-        
         self.tvExpandableTable.beginUpdates()
         self.tvExpandableTable.endUpdates()
     }
-    
+
     
     /*
     // MARK: - Memory Management

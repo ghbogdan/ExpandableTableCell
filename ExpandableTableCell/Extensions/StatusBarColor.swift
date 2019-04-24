@@ -17,6 +17,7 @@ extension UIApplication
         {
             return value(forKey: "statusBar") as? UIView
         }
+        
         return nil
     }
 }
